@@ -23,14 +23,14 @@
 ===
 ```mermaid
 graph TD
-    subgraph RPi 4 (Client)
+    subgraph "RPi 4 (Client)"
         A(picamera2) -- RGB Frame --> B[client.py];
         B -- BGR로 변환 & JPEG 압축 --> C(HTTP POST);
         C -- (JSON 응답) --> B;
         B -- 좌표 (x,y) 출력 --> D[RPi Terminal];
     end
 
-    subgraph Host PC (Server)
+    subgraph "Host PC (Server)"
         C -- (JPEG 이미지) --> E[server.py @ Flask API];
         E -- 이미지 전달 --> F(YOLOv8n 추론);
         F -- 결과 (Boxes) --> E;
@@ -140,4 +140,5 @@ RPI5에서 YOLO 직접 돌리기 : [RPI5 + YOLO11n 10FPS](https://www.ejtech.io/
 * RPI3 + yolo8n_ncnn : 0.6
 * RPI4 + yolo8n_ncnn : 2.1
 * 오프로딩 : 200이상
+
 
