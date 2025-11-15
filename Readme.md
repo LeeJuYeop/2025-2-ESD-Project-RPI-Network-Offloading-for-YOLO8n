@@ -2,6 +2,15 @@
 ===
 이 프로젝트는 Raspberry Pi 4에서 실시간 YOLOv8 객체 탐지를 수행하는 시스템입니다. RPi 4의 제한된 연산 능력(약 2 FPS)을 극복하기 위해, 무거운 YOLO 추론 작업을 네트워크를 통해 강력한 호스트 PC(노트북)로 오프로딩(Offloading)합니다.
 
+## 참고사항 및 직접 돌려본 성능
+===
+RPI5에서 YOLO 직접 돌리기 : [RPI5 + YOLO11n 10FPS](https://www.ejtech.io/learn/yolo-on-raspberry-pi)
+
+환경 별 FPS 비교
+* RPI3 + yolo8n_ncnn : 0.6
+* RPI4 + yolo8n_ncnn : 2.1
+* 오프로딩 : 200이상
+
 ## 🤖 핵심 아키텍처
 ===
 시스템은 클라이언트-서버 모델로 작동합니다.
@@ -132,13 +141,5 @@ SERVER_URL = "[http://192.168.137.1:5000/detect](http://192.168.137.1:5000/detec
 
 3.  실행이 성공하면 노트북 화면에 RPi가 전송하는 영상과 YOLO 탐지 결과가 나타나고, RPi 터미널에는 감지된 객체의 좌표가 출력됩니다.
 
-## 참고 및 성능비교
-===
-RPI5에서 YOLO 직접 돌리기 : [RPI5 + YOLO11n 10FPS](https://www.ejtech.io/learn/yolo-on-raspberry-pi)
-
-환경 별 FPS 비교
-* RPI3 + yolo8n_ncnn : 0.6
-* RPI4 + yolo8n_ncnn : 2.1
-* 오프로딩 : 200이상
 
 
